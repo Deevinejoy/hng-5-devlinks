@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link  from "next/link";
 import { FormEvent, useState } from 'react';
-import firebase from "firebase/compat/app";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -25,31 +24,17 @@ export default function CreateAcct() {
     }
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      // Navigate to another page after successful sign-up
-      redirect('/Homepage'); // Example: Redirect to dashboard after sign-up
+      
+      redirect('/Homepage');
     } catch (error: any) {
       console.error('Error signing up:', error.message);
       setError(error.message);
     }
   
   }
- // const handleSubmit = (e: FormEvent)=>{
-   // e.preventDefault() 
- //   setError(null)
-  //  if (password !== passwordAgain){
-   //   setError("passwords do not match")
-  //    return;
-  //  }
 
-   // try{
-   //   const userCredential = await  createUserWithEmailAndPassword(auth, email, password);
-   // } catch{
-
-    //}
-
-  //}
   return (
-    <main className=" h-[100vw] bg-[#FAFAFA] flex justify-center items-center flex-col ">
+    <main className=" pt-[137px] bg-[#FAFAFA] flex justify-center items-center flex-col ">
          <div className="logo-login-page p-[0px] flex gap-x-[4.17px] justify-center mb-[51px]">
     <Image src="/logo.svg" alt="logo" width={33.33} height={33.33} />
     <Image src="/devlinks.svg" alt="devlinks" width={135} height={26.25} />
@@ -65,7 +50,7 @@ export default function CreateAcct() {
         <form className=" flex flex-col relative" onSubmit={(e) => e.preventDefault()}>
         <label className="pb-[4px] text-[#888888] font-[400px] text-[12px] ">Email address</label>
     <input
-          className=" p-[12px] pl-[24px] border-style border-[1px] rounded-[8px]  mb-[24px] "
+          className=" p-[12px] pl-[48px] border-style border-[1px] rounded-[8px]  mb-[24px] "
           type="text" 
            id="email"
            placeholder="e.g. alex@email.com"
@@ -74,13 +59,13 @@ export default function CreateAcct() {
            autoComplete="email"
            onChange={(e) => setEmail(e.target.value)}
     />
-    <div  className="absolute top-[42px]">
+    <div  className="absolute top-[42px] pl-[24px]">
     <Image 
    src="/envelope.svg" alt="logo" width={16} height={16}/>
     </div>
     <label className=" pb-[4px] text-[#888888] font-[400px] text-[12px] ">Create password</label>
     <input 
-     className=" p-[12px] pl-[24px] border-style border-[1px] rounded-[8px]  mb-[24px]"
+     className=" p-[12px] pl-[48px] border-style border-[1px] rounded-[8px]  mb-[24px]"
     type="text" 
            id="password"
            placeholder="At least 8 characters"
@@ -88,13 +73,13 @@ export default function CreateAcct() {
            onChange={(e) => setPassword(e.target.value)}
            autoComplete="current-password"
     />
-     <div  className="absolute top-[102px] pl -[17.5px]">
+     <div  className="absolute top-[132px] pl-[24px]">
      <Image src="/passlock.svg" alt="logo" width={16} height={16}/>
 
     </div>
     <label className=" pb-[4px] text-[#888888] font-[400px] text-[12px] ">Confirm password</label>
     <input 
-     className=" p-[12px] pl-[24px] border-style border-[1px] rounded-[8px]  mb-[24px]"
+     className=" p-[12px] pl-[48px] border-style border-[1px] rounded-[8px]  mb-[24px]"
     type="text" 
            id="password"
            placeholder="At least 8 characters"
@@ -103,7 +88,7 @@ export default function CreateAcct() {
            autoComplete="current-password"
     />
     
-     <div  className="absolute top-[200px] pl -[17.5px]">
+     <div  className="absolute top-[229px]  pl-[24px]">
      <Image src="/passlock.svg" alt="logo" width={16} height={16}/>
 
     </div>

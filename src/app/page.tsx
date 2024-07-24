@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link  from "next/link";
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
-//or next/router
 import { signIn } from "next-auth/react";
+
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from './firebaseConfig';
 
@@ -21,9 +21,9 @@ export default function Home() {
     setError(null);
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      // Navigate to another page after successful login
-      router.push('/dashboard'); // Example: Redirect to dashboard after login
+      const userCredential = await signInWithEmailAndPassword(auth, email, password)
+      
+      router.push('/Homepage'); 
     } catch (error: any) {
       console.error('Error signing in:', error.message);
       setError(error.message);
@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
    
-  <main className=" h-[100vw] bg-[#FAFAFA] flex justify-center items-center flex-col ">
+  <main className=" bg-[#FAFAFA] grid place-content-center place-items-center pt-[137px] ">
     <div className="logo-login-page p-[0px] flex gap-x-[4.17px] justify-center mb-[51px]">
     <Image src="/logo.svg" alt="logo" width={33.33} height={33.33} />
     <Image src="/devlinks.svg" alt="devlinks" width={135} height={26.25} />
@@ -50,7 +50,7 @@ export default function Home() {
   
     <label className="pb-[4px] text-[#888888] font-[400px] text-[12px] ">Email address</label>
     <input
-          className=" p-[12px] pl-[24px] border-style border-[1px] rounded-[8px] mb-[24px]"
+          className=" p-[12px] pl-[48px] border-style border-[1px] rounded-[8px] mb-[24px]"
           type="text" 
            id="email"
            placeholder="e.g. alex@email.com"
@@ -59,14 +59,14 @@ export default function Home() {
            autoComplete="email"
            onChange={(e) => setEmail(e.target.value)}
     />
-    <div  className="absolute top-[42px]">
+    <div  className="absolute top-[40px] pl-[24px]">
     <Image 
    src="/envelope.svg" alt="logo" width={16} height={16}/>
     </div>
    
     <label className=" pb-[4px] text-[#888888] font-[400px] text-[12px] ">Password</label>
     <input 
-     className=" p-[12px] pl-[24px] border-style border-[1px] rounded-[8px]"
+     className=" p-[12px] pl-[48px] border-style border-[1px] rounded-[8px]"
     type="password" 
            id="password"
            placeholder="Enter your password"
@@ -75,8 +75,8 @@ export default function Home() {
            autoComplete="current-password"
     />
             {error && <p className="text-red-500">{error}</p>}
-     <div  className="absolute top-[102px] pl -[17.5px]">
-     <Image src="/passlock.svg" alt="logo" width={16} height={16}/>
+     <div  className="absolute top-[132px] pl-[24px]">
+     <Image src="/passlock.svg" alt="logo" width={16} height={16} />
 
     </div>
     

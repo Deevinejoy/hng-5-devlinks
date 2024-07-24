@@ -26,20 +26,17 @@ export default function Homepage() {
       
       
   return (
-    <main className=' bg-[#FAFAFA]  mt-[24px] flex-col'>
+    <main className=' bg-[#FAFAFA]  mt-[24px] flex-col sm:flex-col-reverse'>
              <Navbar/>
        
-        <div className=' bg-[#FAFAFA]  mt-[24px] flex gap-x-[24px]'>
+        <div className=' bg-[#FAFAFA]  mt-[24px] flex gap-x-[24px] '>
    
-            <div className='flex bg-[white] justify-center items-center w-[560px]'>
+            <div className='flex bg-[white] justify-center items-center w-[560px] hidden lg:block'>
                 <Image src="mobile-preview.svg" alt='subtract' width={307} height={631}/>
            {/* */} </div>
             <div className=' bg-[white] pt-[40px] pl-[40px] pr-[40px]
             flex-grow'>
-                <p className="font-[700] text-[32px] text-[#333333] leading-[48px] items-center">Customize you links{/*
-                {session?.data?.user?.email}
-                
-                */}</p>
+                <p className="font-[700] sm:text[24px] text-[32px] text-[#333333] leading-[48px] sm:leading[36px] items-center">Customize your links</p>
                 <p 
                  className="font-[400] text-[16px] text-[#737373] leading-[24px] items-center mb-[40px]">Add/edit/remove links below and then share all your profiles with the world!</p>
 

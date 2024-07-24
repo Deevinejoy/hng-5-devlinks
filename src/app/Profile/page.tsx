@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image"
-import Navbar from "../../Components/Navbar"
+import Navbar from "../Components/Navbar"
 import { useState } from "react";
 
 
@@ -31,7 +31,7 @@ export default function Profile() {
 
       <div className=' bg-[#FAFAFA]  mt-[24px] flex gap-x-[24px]'>
 
-          <div className='flex bg-[white] justify-center items-center w-[560px]'>
+          <div className='flex bg-[white] justify-center items-center w-[560px] hidden lg:block'>
            
               <Image src='/mobile-preview.svg' alt='mobile' width={307} height={631}/>
             </div>
