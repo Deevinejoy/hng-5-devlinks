@@ -41,7 +41,7 @@ export default function Profile() {
                         <p className="font-[700] text-[32px] text-[#333333] leading-[48px] items-center ">Profile details</p>
                 <p  className="font-[400] text-[16px] text-[#737373] leading-[24px] items-center mb-[40px]">Add your details to create a personal touch to your profile.</p>
               </div>
-              <div className=" pl-[20px] pr-[20px] flex bg-[#FAFAFA]">
+              <div className=" pl-[20px] pr-[20px] flex bg-[#FAFAFA] flex-row lg:flex-row">
                 <div className="flex  items-center">
                 <p  className="font-[400] text-[16px] text-[#737373] leading-[24px] w-[240px]">Profile picture</p>
 
@@ -87,25 +87,25 @@ export default function Profile() {
               </div>
               <div className=" bg-[#FAFAFA] mt-[24px] p-[20px] ">
                 <form action="" className="flex flex-col gap-y-[12px]">
-                  <div className="flex justify-between">
-                    <label className="font-[400] text-[16px] text-[#888888] leading-[24px]">First name*</label>
+                  <div className="flex justify-between flex-col lg:flex-row md:flex-row">
+                    <label className="font-[400] lg:text-[16px] text-[#888888] lg:leading-[24px] md:text-[16px] text-[12px] leading-[18px] pb-[4px] ">First name*</label>
                     <input
-                    className="rounded-[8px] pt-[12px] pb-[12px] pr-[16px] pl-[18px] w-[432px] "
+                    className="rounded-[8px] pt-[12px] pb-[12px] pr-[16px] pl-[18px] w-[432px] border-[1px]"
                     type='text' placeholder='e.g. John'/>
 
                   </div>
                   
-                  <div  className="flex justify-between">
-                    <label  className="font-[400] text-[16px] text-[#888888] leading-[24px]">Last name*</label>
+                  <div  className="flex justify-between flex-col lg:flex-row md:flex-row">
+                    <label  className="font-[400] lg:text-[16px] text-[#888888] lg:leading-[24px] md:text-[16px] text-[12px] leading-[18px] pb-[4px]">Last name*</label>
                     <input
-                    className="rounded-[8px] pt-[12px] pb-[12px] pr-[16px] pl-[18px] w-[432px]"
+                    className="rounded-[8px] pt-[12px] pb-[12px] pr-[16px] pl-[18px] w-[432px] border-[1px]"
                     type='text' placeholder='e.g. Appleseed'/>
 
                   </div>
-                  <div  className="flex justify-between">
-                  <label  className="font-[400] text-[16px] text-[#888888] leading-[24px] ">Email</label>
+                  <div  className="flex justify-between flex-col lg:flex-row md:flex-row">
+                  <label  className="font-[400] lg:text-[16px] text-[#888888] lg:leading-[24px] md:text-[16px] text-[12px] leading-[18px] pb-[4px]">Email</label>
                   <input
-                   className="rounded-[8px] pt-[12px] pb-[12px] pr-[16px] pl-[18px] w-[432px]"
+                   className="rounded-[8px] pt-[12px] pb-[12px] pr-[16px] pl-[18px] border-[1px] w-[432px]"
                    type='text' placeholder='e.g. email@example.com'/>
 
                   </div>

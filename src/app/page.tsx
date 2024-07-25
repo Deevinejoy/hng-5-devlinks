@@ -5,7 +5,6 @@ import Link  from "next/link";
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
-
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from './firebaseConfig';
 
@@ -22,7 +21,7 @@ export default function Home() {
 
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
-      
+      console.log(userCredential)
       router.push('/Homepage'); 
     } catch (error: any) {
       console.error('Error signing in:', error.message);
@@ -32,7 +31,7 @@ export default function Home() {
 
   return (
    
-  <main className=" bg-[#FAFAFA] grid place-content-center place-items-center pt-[137px] ">
+  <main className=" bg-[#FAFAFA] grid place-content-center place-items-center pt-[100px] ">
     <div className="logo-login-page p-[0px] flex gap-x-[4.17px] justify-center mb-[51px]">
     <Image src="/logo.svg" alt="logo" width={33.33} height={33.33} />
     <Image src="/devlinks.svg" alt="devlinks" width={135} height={26.25} />
@@ -82,7 +81,7 @@ export default function Home() {
     
     <button 
      className=" bg-[#633CFF] text-[#FFFFFF] font-[600px] text-[16px] leading-[24px] mt-[24px] mb-[24px] rounded-[8px] h-[46px]"
-    onClick={()=> signIn('Credential', {email, password, redirect: true, callbackUrl: '/HomePage'})}><p>Login</p></button>
+    onClick={login}><p>Login</p></button>
     <Link href="./Homepage">home</Link>
    </form>
    <div className="login-footer text-center">
