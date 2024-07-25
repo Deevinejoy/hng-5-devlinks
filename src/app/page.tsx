@@ -17,6 +17,7 @@ export default function Home() {
 
   const router = useRouter();
   const login = async () => {
+    router.push('Homepage')
     setError(null);
 
     try {
@@ -82,7 +83,7 @@ export default function Home() {
     <button 
      className=" bg-[#633CFF] text-[#FFFFFF] font-[600px] text-[16px] leading-[24px] mt-[24px] mb-[24px] rounded-[8px] h-[46px]"
     onClick={login}><p>Login</p></button>
-    <Link href="./Homepage">home</Link>
+ 
    </form>
    <div className="login-footer text-center">
     <p className=" text-[#888888] font-[400px] text-[16px] leading-[24px]" >Dont have an account? 
